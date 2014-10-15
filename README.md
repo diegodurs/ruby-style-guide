@@ -463,9 +463,9 @@ Translations of the guide are available in the following languages:
     Adopt a consistent multi-line method chaining style. There are two
     popular styles in the Ruby community, both of which are considered
     good - leading `.` (Option A) and trailing `.` (Option B).
-<sup>[[link](#consistent-multi-line-chains)]</sup>
+<sup>[[link](#consistent-multi-line-chains)]</sup> In Rights'Up we use the option A.
 
-  * **(Option A)** When continuing a chained method invocation on
+  * **(Option A - Good)** When continuing a chained method invocation on
     another line keep the `.` on the second line.
 
     ```Ruby
@@ -474,11 +474,12 @@ Translations of the guide are available in the following languages:
       four
 
     # good - it's immediately clear what's going on the second line
-    one.two.three
-      .four
+    one.two
+       .three
+       .four
     ```
 
-  * **(Option B)** When continuing a chained method invocation on another line,
+  * **(Option B - Bad)** When continuing a chained method invocation on another line,
     include the `.` on the first line to indicate that the
     expression continues.
 
@@ -2083,12 +2084,12 @@ condition](#safe-assignment-in-condition).
     end
 
     # protected and private methods are grouped near the end
-    protected
+  protected
 
     def some_protected_method
     end
 
-    private
+  private
 
     def some_private_method
     end
@@ -2392,9 +2393,9 @@ condition](#safe-assignment-in-condition).
 
 * <a name="indent-public-private-protected"></a>
   Indent the `public`, `protected`, and `private` methods as much the method
-  definitions they apply to. Leave one blank line above the visibility modifier
+  definitions they apply to minus 1 tab. Leave one blank line above the visibility modifier
   and one blank line below in order to emphasize that it applies to all methods
-  below it.
+  below it. We use minus 1 tab for visibility purpose, for more information, read [this blog post (Option 3)](http://fabiokung.com/2010/04/05/ruby-indentation-for-access-modifiers-and-their-sections/)
 <sup>[[link](#indent-public-private-protected)]</sup>
 
   ```Ruby
@@ -2403,7 +2404,7 @@ condition](#safe-assignment-in-condition).
       # ...
     end
 
-    private
+  private
 
     def private_method
       # ...
